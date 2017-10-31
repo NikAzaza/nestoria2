@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-filter (filter)="refreshFilter($event)">
+
+            </app-filter>
+            
+            <div class="d-flex">
+                <button class="btn btn-outline-danger">clear form</button>
+                
+                <button class="btn btn-outline-success ml-auto" (click)="sendRequestToServer()">
+                    find
+                </button>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <app-result-page [respond]="respond">
+
+            </app-result-page>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="input-group">
+            <app-r-search [data]='data' 
+                    (currentValue)="setSearchString($event)"
+                    (searchFromHint)="addSearchResultFromHint($event)">
+            </app-r-search>
+        </div>
+    </div>
+    <div class="col-md-3">
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" 
+                                    (click)="addSearchResult()"
+                                    [disabled]="searchComponent.inputForm.status === 'INVALID'">
+                    Go!
+                </button>
+            </span>       
+    </div>
+</div>

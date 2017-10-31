@@ -1,0 +1,37 @@
+<div class="container">
+     <h2>title</h2>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores ipsum ipsa reprehenderit maiores hic cumque, 
+        reiciendis ratione libero dolore veniam nesciunt! Earum, aliquid optio. Rem beatae sit accusantium minima quaerat!
+    </p>
+
+    <div class="row">
+        <div class="col-md-8">
+            <main-search [currentCountry]="currentCountry"></main-search>
+        </div>
+      
+        <div class="col-md-4">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{currentCountry.localeName}}
+                </button>
+                
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" 
+                            *ngFor="let country of countriesList" 
+                            (click)="setCurrentCountry(country)">
+                        {{country.localeName}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <search-list></search-list>
+</div>
+
+
+
+
+
+

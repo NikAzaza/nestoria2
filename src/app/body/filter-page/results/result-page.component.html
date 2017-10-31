@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="input-group">
+        <app-r-search [data]='data' 
+                        (currentValue)="setCurrentSearchValue($event)"
+                        (searchFromHint)="addSearchResultFromHint($event)">
+        </app-r-search>
+    </div>
+</div>
+
+
+<div class="card-deck">
+        <div class="col-md-6"  *ngFor="let apartment of respond">
+             <app-respond-item [result]="apartment">
+
+            </app-respond-item>
+        </div>
+</div>

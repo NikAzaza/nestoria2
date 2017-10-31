@@ -1,0 +1,104 @@
+<form [formGroup]="filterForm"> 
+    <div class="input-group-wrapper">
+        <h6>type</h6>
+        <div class="input-group">
+            <label for="listing_type_buy" class="btn btn-outline-primary">
+                Buy
+                <input type="radio" id="listing_type_buy" name="listing_type" formControlName="listing_type" value="buy" [checked]="filterForm.get('listing_type').value === 'buy'">
+            </label>
+            <label for="listing_type_rent" class="btn btn-outline-primary">
+                Rent
+                <input type="radio" id="listing_type_rent" name="listing_type" formControlName="listing_type" value="rent">
+            </label>
+        </div>
+    </div>
+  
+    <div class="input-group-wrapper">
+        <h6>Price</h6>
+        <div class="input-group" formGroupName="price">
+            <span class="input-group-addon">min, $</span>
+            <input type="number" class="form-control" min="0" max="99999999" formControlName="1">
+        </div>
+        <div class="input-group" formGroupName="price">
+            <span class="input-group-addon">max, $</span>
+            <input type="number" class="form-control" min="0" max="99999999" formControlName="2">
+        </div>
+    </div>
+
+    <div class="input-group-wrapper">
+        <h6>Bedrooms</h6>
+        <div class="input-group" formGroupName="bedroom">
+            <label for="bedroom0" class="btn btn-outline-primary" >studio
+                <input type="checkbox" id="bedroom0" name="bedroom" formControlName="0">
+            </label>
+            <label for="bedroom1" class="btn btn-outline-primary" >1
+                <input type="checkbox" id="bedroom1" name="bedroom" formControlName="1">
+            </label>
+            <label for="bedroom2" class="btn btn-outline-primary">2
+                <input type="checkbox" id="bedroom2" name="bedroom"  formControlName="2">
+            </label>
+            <label for="bedroom3" class="btn btn-outline-primary">3
+                <input type="checkbox" id="bedroom3" name="bedroom" formControlName="3">
+            </label>
+            <label for="bedroom4" class="btn btn-outline-primary">4
+                <input type="checkbox" id="bedroom4" name="bedroom" formControlName="4">
+            </label>
+        </div>
+    </div>
+
+    <div class="input-group-wrapper">
+        <h6>Bathrooms</h6>
+         <div class="input-group" formGroupName="bathroom">
+            <label for="bathroom1" class="btn btn-outline-primary" >1
+                <input type="checkbox" id="bathroom1" name="bedroom" formControlName="1">
+            </label>
+            <label for="bathroom2" class="btn btn-outline-primary">2
+                <input type="checkbox" id="bathroom2" name="bedroom"  formControlName="2">
+            </label>
+            <label for="bathroom3" class="btn btn-outline-primary">3
+                <input type="checkbox" id="bathroom3" name="bedroom" formControlName="3">
+            </label>
+            <label for="bathroom4" class="btn btn-outline-primary">4
+                <input type="checkbox" id="bathroom4" name="bedroom" formControlName="4">
+            </label>
+        </div>
+    </div>
+
+    <div class="input-group-wrapper">
+        <h6>Sorting</h6>
+        <div class="input-group">
+            <select formControlName="sort">
+                <option *ngFor="let sorting of arrayOfSortTypes" value="{{sorting}}" >
+                    {{sorting}}
+                </option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="input-group-wrapper">
+        <h6>Number of results</h6>
+        <div class="input-group">
+            <label for="number_of_results5" class="btn btn-outline-primary">
+                5
+                <input type="radio" id="number_of_results5" name="number_of_results" formControlName="number_of_results" value="5">
+            </label>
+            <label for="number_of_results10" class="btn btn-outline-primary">
+                10
+                <input type="radio" id="number_of_results10" name="number_of_results" formControlName="number_of_results" value="10">
+            </label>
+            <label for="number_of_results25" class="btn btn-outline-primary">
+                25
+                <input type="radio" id="number_of_results25" name="number_of_results" formControlName="number_of_results" value="25">
+            </label>
+            <label for="number_of_results50" class="btn btn-outline-primary">
+                50
+                <input type="radio" id="number_of_results50" name="number_of_results" formControlName="number_of_results" value="50">
+            </label>
+            <label for="number_of_results100" class="btn btn-outline-primary">
+                100
+                <input type="radio" id="number_of_results100" name="number_of_results" formControlName="number_of_results" value="100">
+            </label>
+        </div>
+    </div>
+   
+</form> 
